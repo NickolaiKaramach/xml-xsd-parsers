@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Unit tests">
+
+    <test name="Information-Handling">
+        <groups>
+            <define name="All">
+                <include name="partSort"/>
+                <include name="lexemeSort"/>
+            </define>
+            <run>
+                <include name="All"/>
+            </run>
+
+        </groups>
+
+        <classes>
+            <!--
+            <class name="edu.etc.by.kickstart.creator.CreatorTest"/>
+            <class name="edu.etc.by.kickstart.action.CubeActionsTest"/>
+            <class name="edu.etc.by.kickstart.action.ExecutorTest"/>
+            <class name="edu.etc.by.kickstart.parser.ParserTest"/>
+            <class name="edu.etc.by.kickstart.validator.ValidatorTest"/>
+            -->
+        </classes>
+
+    </test>
+
+</suite>

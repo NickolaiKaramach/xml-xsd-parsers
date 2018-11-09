@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema
+        xmlns:tns="http://www.etc.by/karamach/menu"
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.etc.by/karamach/menu">
+
+    <element name="menu">
+        <complexType>
+            <sequence>
+                <element name="breakfast-menu" type="tns:Breakfast-menu"/>
+                <element name="main-menu" type="tns:Main-menu"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="Breakfast-menu">
+        <sequence>
+            <element name="food" type="tns:Food" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+
+    <complexType name="Main-menu">
+        <sequence>
+            <element name="food" type="tns:Food" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+
+    <complexType name="Food">
+        <sequence>
+            <element type="string" name="image"/>
+            <element type="string" name="name"/>
+            <element type="string" name="description" maxOccurs="unbounded"/>
+            <element type="string" name="weight"/>
+            <element type="double" name="price" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute type="int" name="id" use="required"/>
+    </complexType>
+</schema>

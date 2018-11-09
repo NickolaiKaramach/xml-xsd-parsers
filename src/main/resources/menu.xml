@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tns:menu xmlns:tns="http://www.etc.by/karamach/menu" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.etc.by/karamach/menu menuScheme.xsd">
+    <breakfast-menu>
+        <food id="1">
+            <image>/assortRiba.jpg</image>
+            <name>Ассорти рыбное</name>
+            <description>Слабосоленая форель</description>
+            <weight>100/20/15</weight>
+            <price>123</price>
+        </food>
+
+        <food id="2">
+            <image>/makarons.jpg</image>
+            <name>Макароны</name>
+            <description>Жаренные макароны</description>
+            <weight>200/10</weight>
+            <price>321</price>
+        </food>
+
+        <food id="3">
+            <image>/boolochki.jpg</image>
+            <name>Булочки</name>
+            <description>Булочки от бабушки</description>
+            <weight>300/100/10</weight>
+            <price>999</price>
+        </food>
+
+        <food id="4">
+            <image>/smth.jpg</image>
+            <name>Секретное</name>
+            <description>Оч вкусно</description>
+            <weight>999/99</weight>
+            <price>100500</price>
+        </food>
+
+        <food id="5">
+            <image>/assortBaklaszhani</image>
+            <name>Баклажаны</name>
+            <description>1. Вкусные</description>
+            <description>2. С чесноком</description>
+            <description>3. С помидором</description>
+            <weight>100/5</weight>
+            <price>10</price>
+            <price>15</price>
+            <price>20</price>
+        </food>
+    </breakfast-menu>
+
+    <main-menu>
+        <food id="6">
+            <image>/draniki.jpg</image>
+            <name>Дранички</name>
+            <description>1. Драники с сыром</description>
+            <description>2. Драники с салом</description>
+            <description>3. Драники с тунцом</description>
+            <description>4. Драники с драниками</description>
+            <weight>500/20/15</weight>
+            <price>300</price>
+            <price>500</price>
+            <price>600</price>
+            <price>999</price>
+        </food>
+
+        <food id="7">
+            <image>/makarons.jpg</image>
+            <name>Макароны</name>
+            <description>Макароны с сыром и фаршем</description>
+            <weight>400/20</weight>
+            <price>440</price>
+        </food>
+
+        <food id="8">
+            <image>/sushi.jpg</image>
+            <name>Суши</name>
+            <description>Сладкие и соленые суши</description>
+            <weight>300/300/200</weight>
+            <price>250</price>
+        </food>
+
+        <food id="9">
+            <image>/babkaVPechi.jpg</image>
+            <name>Бабка из печи</name>
+            <description>Оч вкусно</description>
+            <weight>999/99</weight>
+            <price>100500</price>
+        </food>
+
+        <food id="10">
+            <image>/golubi</image>
+            <name>Голуби</name>
+            <description>1. Вкусные</description>
+            <description>2. С чесноком</description>
+            <description>3. С помидором</description>
+            <weight>200/15</weight>
+            <price>100</price>
+            <price>150</price>
+            <price>200</price>
+        </food>
+    </main-menu>
+</tns:menu>
