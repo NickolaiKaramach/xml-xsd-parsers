@@ -1,6 +1,6 @@
 package edu.etc.karamach.xml.exception;
 
-public class SAXMenuParserException extends Exception {
+public class SAXMenuParserException extends XMLParserException {
     private static final long serialVersionUID = -7314042102579468653L;
 
     public SAXMenuParserException() {

@@ -7,7 +7,9 @@ import java.util.List;
 import java.util.Objects;
 
 public class MainMenu implements FoodMenu {
-    private static final long serialVersionUID = 8627606104886946317L;
+    private static final long serialVersionUID = 5350480323224019606L;
+    private static final String START_MESSAGE = "Today's main menu:\n";
+    private static final String NEW_LINE_REGEX = "\n";
     private List<Food> foodMenu = new ArrayList<>();
 
     public void addFood(Food food) {
@@ -23,11 +25,11 @@ public class MainMenu implements FoodMenu {
     }
 
     public String printMenu() {
-        StringBuilder stringBuilder = new StringBuilder("Today's main menu:\n");
+        StringBuilder stringBuilder = new StringBuilder(START_MESSAGE);
 
         for (Food food : foodMenu) {
             stringBuilder.append(food);
-            stringBuilder.append("\n");
+            stringBuilder.append(NEW_LINE_REGEX);
         }
 
         return stringBuilder.toString();

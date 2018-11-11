@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class Food implements Serializable {
 
-    private static final long serialVersionUID = -6817684030365398826L;
+    private static final long serialVersionUID = -2755758591759205312L;
 
     private int id;
     private String imageURI;
@@ -90,7 +90,6 @@ public class Food implements Serializable {
                 prices.equals(food.getPrices());
     }
 
-    //TODO: Replace with our hash?
     @Override
     public int hashCode() {
         return Objects.hash(id, imageURI, name, description, weight, prices);

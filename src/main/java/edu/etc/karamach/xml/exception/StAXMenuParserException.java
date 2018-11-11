@@ -1,6 +1,6 @@
 package edu.etc.karamach.xml.exception;
 
-public class StAXMenuParserException extends Exception {
+public class StAXMenuParserException extends XMLParserException {
     private static final long serialVersionUID = 1009779098417557795L;
 
     public StAXMenuParserException() {
