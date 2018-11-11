@@ -1,6 +1,7 @@
 package edu.etc.karamach.xml.parser.sax.handler;
 
 import edu.etc.karamach.xml.entity.Food;
+import edu.etc.karamach.xml.entity.FoodType;
 import edu.etc.karamach.xml.entity.Menu.BreakfastMenu;
 import edu.etc.karamach.xml.entity.Menu.FoodMenu;
 import edu.etc.karamach.xml.entity.Menu.MainMenu;
@@ -24,6 +25,7 @@ public class SAXMenuHandler extends DefaultHandler {
     private FoodMenu currentMenu;
 
     private Food food;
+    private FoodType foodType;
     private StringBuilder text;
 
     public MainMenu getMainMenu() {
@@ -74,6 +76,9 @@ public class SAXMenuHandler extends DefaultHandler {
                 case MAIN_MENU:
                     currentMenu = mainMenu;
                     break;
+                case FOOD_TYPE:
+                    foodType = new FoodType();
+                    break;
             }
         }
     }
@@ -92,13 +97,13 @@ public class SAXMenuHandler extends DefaultHandler {
                     food.setImageURI(text.toString());
                     break;
                 case PRICE:
-                    food.addPrice(Double.parseDouble(text.toString()));
+                    foodType.setPrice(Double.parseDouble(text.toString()));
                     break;
                 case DESCRIPTION:
-                    food.addDescription(text.toString());
+                    foodType.setDescription(text.toString());
                     break;
                 case WEIGHT:
-                    food.setWeight(text.toString());
+                    foodType.setWeight(text.toString());
                     break;
                 case FOOD:
                     currentMenu.addFood(food);
@@ -108,6 +113,12 @@ public class SAXMenuHandler extends DefaultHandler {
                     }
 
                     food = null;
+                    break;
+
+                case FOOD_TYPE:
+                    food.addFoodType(foodType);
+
+                    foodType = null;
                     break;
             }
         }

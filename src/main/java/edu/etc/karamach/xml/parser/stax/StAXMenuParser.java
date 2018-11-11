@@ -1,6 +1,7 @@
 package edu.etc.karamach.xml.parser.stax;
 
 import edu.etc.karamach.xml.entity.Food;
+import edu.etc.karamach.xml.entity.FoodType;
 import edu.etc.karamach.xml.entity.Menu.BreakfastMenu;
 import edu.etc.karamach.xml.entity.Menu.FoodMenu;
 import edu.etc.karamach.xml.entity.Menu.MainMenu;
@@ -29,6 +30,7 @@ public class StAXMenuParser implements XMLMenuParser {
     private static final String ID_ATTRIBUTE_NAME = "id";
     private static final XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
     private XMLStreamReader xmlStreamReader;
+    private FoodType foodType;
 
     @Override
     public List<FoodMenu> parse(String inputXML) throws XMLParserException {
@@ -108,6 +110,10 @@ public class StAXMenuParser implements XMLMenuParser {
                                 food.setId(id);
 
                                 break;
+                            case FOOD_TYPE:
+                                foodType = new FoodType();
+                                break;
+
                         }
                         break;
 
@@ -148,6 +154,10 @@ public class StAXMenuParser implements XMLMenuParser {
 
                 food = null;
                 break;
+            case FOOD_TYPE:
+                food.addFoodType(foodType);
+
+                break;
         }
         return food;
     }
@@ -163,15 +173,15 @@ public class StAXMenuParser implements XMLMenuParser {
                 break;
 
             case PRICE:
-                food.addPrice(Double.parseDouble(text));
+                foodType.setPrice(Double.parseDouble(text));
                 break;
 
             case DESCRIPTION:
-                food.addDescription(text);
+                foodType.setDescription(text);
                 break;
 
             case WEIGHT:
-                food.setWeight(text);
+                foodType.setWeight(text);
                 break;
         }
     }

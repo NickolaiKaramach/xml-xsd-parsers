@@ -31,10 +31,16 @@
         <sequence>
             <element type="string" name="image"/>
             <element type="string" name="name"/>
-            <element type="string" name="description" maxOccurs="unbounded"/>
-            <element type="string" name="weight"/>
-            <element type="double" name="price" maxOccurs="unbounded"/>
+            <element type="tns:Food-type" name="food-type" maxOccurs="unbounded"/>
         </sequence>
         <attribute type="int" name="id" use="required"/>
+    </complexType>
+
+    <complexType name="Food-type">
+        <sequence>
+            <element type="string" name="description"/>
+            <element type="string" name="weight"/>
+            <element type="double" name="price"/>
+        </sequence>
     </complexType>
 </schema>

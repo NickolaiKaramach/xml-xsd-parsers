@@ -2,18 +2,17 @@ package edu.etc.karamach.xml.entity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Food implements Serializable {
 
-    private static final long serialVersionUID = -2755758591759205312L;
+    private static final long serialVersionUID = 576752808367632305L;
 
     private int id;
     private String imageURI;
     private String name;
-    private ArrayList<String> description = new ArrayList<>();
-    private String weight;
-    private ArrayList<Double> prices = new ArrayList<>();
+    transient private List<FoodType> foodTypesInside = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -39,36 +38,12 @@ public class Food implements Serializable {
         this.name = name.trim();
     }
 
-    public ArrayList<String> getDescription() {
-        return description;
+    public void addFoodType(FoodType foodType) {
+        foodTypesInside.add(foodType);
     }
 
-    public void setDescription(ArrayList<String> description) {
-        this.description = description;
-    }
-
-    public String getWeight() {
-        return weight;
-    }
-
-    public void setWeight(String weight) {
-        this.weight = weight.trim();
-    }
-
-    public ArrayList<Double> getPrices() {
-        return prices;
-    }
-
-    public void setPrices(ArrayList<Double> prices) {
-        this.prices = prices;
-    }
-
-    public void addDescription(String description) {
-        this.description.add(description.trim());
-    }
-
-    public void addPrice(Double price) {
-        prices.add(price);
+    public List<FoodType> getFoodTypesInside() {
+        return foodTypesInside;
     }
 
     @Override
@@ -85,14 +60,12 @@ public class Food implements Serializable {
         return id == food.getId() &&
                 imageURI.equals(food.getImageURI()) &&
                 name.equals(food.getName()) &&
-                description.equals(food.getDescription()) &&
-                weight.equals(food.getWeight()) &&
-                prices.equals(food.getPrices());
+                foodTypesInside.equals(food.getFoodTypesInside());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, imageURI, name, description, weight, prices);
+        return Objects.hash(id, imageURI, name, foodTypesInside);
     }
 
     @Override
@@ -102,9 +75,7 @@ public class Food implements Serializable {
                 "id=" + id +
                 ", imageURI='" + imageURI + '\'' +
                 ", name='" + name + '\'' +
-                ", description=" + description +
-                ", weight='" + weight + '\'' +
-                ", prices=" + prices +
+                ", " + foodTypesInside +
                 '}';
     }
 }
