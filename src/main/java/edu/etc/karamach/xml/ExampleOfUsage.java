@@ -30,8 +30,10 @@ public class ExampleOfUsage {
             List<FoodMenu> saxmMenuResult = saxMenuParser.parse(input);
             List<FoodMenu> staxMenuResult = staxMenuParser.parse(input);
 
-            if (domMenuResult.equals(saxmMenuResult) &&
-                    domMenuResult.equals(staxMenuResult)) {
+            boolean equals = domMenuResult.equals(saxmMenuResult);
+            boolean equals1 = domMenuResult.equals(staxMenuResult);
+            if (equals &&
+                    equals1) {
                 logger.info("yes");
             } else {
                 logger.info("no");

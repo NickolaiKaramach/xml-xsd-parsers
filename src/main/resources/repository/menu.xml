@@ -5,63 +5,76 @@
         <food id="1">
             <image>/assortRiba.jpg</image>
             <name>Ассорти рыбное</name>
-            <food-type>
-                <description>Слабосоленая форель</description>
-                <weight>100/20/15</weight>
+
+            <description>Слабосоленая форель</description>
+            <weight>100/20/15</weight>
+            <ingredients>
+                <ingredient-name>сушеная</ingredient-name>
                 <price>123</price>
-            </food-type>
+            </ingredients>
+
         </food>
 
         <food id="2">
             <image>/makarons.jpg</image>
             <name>Макароны</name>
-            <food-type>
-                <description>Жаренные макароны</description>
-                <weight>200/10</weight>
+
+            <description></description>
+            <weight>200/10</weight>
+            <ingredients>
+                <ingredient-name>Жаренные макароны</ingredient-name>
                 <price>321</price>
-            </food-type>
+            </ingredients>
+
+
         </food>
 
         <food id="3">
             <image>/boolochki.jpg</image>
             <name>Булочки</name>
-            <food-type>
-                <description>Булочки от бабушки</description>
-                <weight>300/100/10</weight>
+
+            <description>Булочки от бабушки</description>
+            <weight>300/100/10</weight>
+            <ingredients>
+                <ingredient-name>С солью</ingredient-name>
                 <price>999</price>
-            </food-type>
+            </ingredients>
+
+
         </food>
 
         <food id="4">
             <image>/smth.jpg</image>
             <name>Секретное</name>
-            <food-type>
-                <description>Оч вкусно</description>
-                <weight>999/99</weight>
+
+            <description>Оч вкусно</description>
+            <weight>999/99</weight>
+            <ingredients>
+                <ingredient-name>тайный ингредиент</ingredient-name>
                 <price>100500</price>
-            </food-type>
+            </ingredients>
+
+
         </food>
 
         <food id="5">
             <image>/assortBaklaszhani</image>
             <name>Баклажаны</name>
-            <food-type>
-                <description>1. Вкусные</description>
-                <weight>100/5</weight>
+            <description>Ассорти баклажанов</description>
+            <weight>100/5</weight>
+
+            <ingredients>
+                <ingredient-name>1. Со сметаноой</ingredient-name>
                 <price>10</price>
-            </food-type>
-            <food-type>
-                <description>2. С чесноком</description>
-                <weight>100/5</weight>
+            </ingredients>
+            <ingredients>
+                <ingredient-name>2. С сыром</ingredient-name>
                 <price>15</price>
-            </food-type>
-            <food-type>
-                <description>3. С помидором</description>
-                <weight>100/5</weight>
+            </ingredients>
+            <ingredients>
+                <ingredient-name>3. С помидором</ingredient-name>
                 <price>20</price>
-            </food-type>
-
-
+            </ingredients>
         </food>
     </breakfast-menu>
 
@@ -69,79 +82,84 @@
         <food id="6">
             <image>/draniki.jpg</image>
             <name>Дранички</name>
-            <food-type>
-                <description>1. Драники с сыром</description>
-                <weight>500/100/20</weight>
+            <description>С пылу с жару</description>
+            <weight>500/100/20</weight>
+
+            <ingredients>
+                <ingredient-name>С сыром</ingredient-name>
                 <price>300</price>
-            </food-type>
+            </ingredients>
 
-            <food-type>
-                <description>2. Драники с салом</description>
-                <weight>450/70/30</weight>
+            <ingredients>
+                <ingredient-name>Со сметаной</ingredient-name>
                 <price>500</price>
-            </food-type>
+            </ingredients>
 
-            <food-type>
-                <description>3. Драники с тунцом</description>
-                <weight>400/200/100</weight>
+            <ingredients>
+                <ingredient-name>С салом</ingredient-name>
                 <price>600</price>
-            </food-type>
+            </ingredients>
 
-            <food-type>
-                <description>4. Драники с драниками</description>
-                <weight>500/20/15</weight>
+            <ingredients>
+                <ingredient-name>С тунцом</ingredient-name>
                 <price>400</price>
-            </food-type>
+            </ingredients>
         </food>
 
         <food id="7">
             <image>/makarons.jpg</image>
             <name>Макароны</name>
-            <food-type>
-                <description>Макароны с сыром и фаршем</description>
-                <weight>400/20</weight>
+            <description>Макароны с сыром</description>
+            <weight>400/20</weight>
+
+            <ingredients>
+                <ingredient-name>С фаршем</ingredient-name>
                 <price>440</price>
-            </food-type>
+            </ingredients>
         </food>
 
         <food id="8">
             <image>/sushi.jpg</image>
             <name>Суши</name>
-            <food-type>
-                <description>Сладкие и соленые суши</description>
-                <weight>300/300/200</weight>
+            <description>Сладкие суши</description>
+            <weight>300/300/200</weight>
+
+            <ingredients>
+                <ingredient-name>С солью</ingredient-name>
                 <price>250</price>
-            </food-type>
+            </ingredients>
         </food>
 
         <food id="9">
             <image>/babkaVPechi.jpg</image>
             <name>Бабка из печи</name>
-            <food-type>
-                <description>Оч вкусно</description>
-                <weight>999/99</weight>
+            <description>Оч вкусно</description>
+            <weight>999/99</weight>
+
+            <ingredients>
+                <ingredient-name>С гарью</ingredient-name>
                 <price>100500</price>
-            </food-type>
+            </ingredients>
         </food>
 
         <food id="10">
             <image>/golubi</image>
             <name>Голуби</name>
-            <food-type>
-                <description>1. Вкусные</description>
-                <weight>100/5</weight>
+            <description>С приправми</description>
+            <weight>100/5</weight>
+
+            <ingredients>
+                <ingredient-name>1. Вкусные</ingredient-name>
                 <price>10</price>
-            </food-type>
-            <food-type>
-                <description>2. С чесноком</description>
-                <weight>100/5</weight>
+            </ingredients>
+            <ingredients>
+                <ingredient-name>2. С чесноком</ingredient-name>
                 <price>15</price>
-            </food-type>
-            <food-type>
-                <description>3. С помидором</description>
-                <weight>100/5</weight>
+            </ingredients>
+            <ingredients>
+                <ingredient-name>3. С помидором</ingredient-name>
                 <price>20</price>
-            </food-type>
+            </ingredients>
         </food>
     </main-menu>
 </tns:menu>

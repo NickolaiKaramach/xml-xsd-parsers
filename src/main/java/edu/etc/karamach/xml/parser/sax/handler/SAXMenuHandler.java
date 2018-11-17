@@ -1,7 +1,7 @@
 package edu.etc.karamach.xml.parser.sax.handler;
 
 import edu.etc.karamach.xml.entity.Food;
-import edu.etc.karamach.xml.entity.FoodType;
+import edu.etc.karamach.xml.entity.Ingredient;
 import edu.etc.karamach.xml.entity.Menu.BreakfastMenu;
 import edu.etc.karamach.xml.entity.Menu.FoodMenu;
 import edu.etc.karamach.xml.entity.Menu.MainMenu;
@@ -25,7 +25,7 @@ public class SAXMenuHandler extends DefaultHandler {
     private FoodMenu currentMenu;
 
     private Food food;
-    private FoodType foodType;
+    private Ingredient ingredient;
     private StringBuilder text;
 
     public MainMenu getMainMenu() {
@@ -70,14 +70,17 @@ public class SAXMenuHandler extends DefaultHandler {
                     food = new Food();
                     food.setId(Integer.parseInt(attributes.getValue(ID_ATTRIBUTE_NAME)));
                     break;
+
                 case BREAKFAST_MENU:
                     currentMenu = breakfastMenu;
                     break;
+
                 case MAIN_MENU:
                     currentMenu = mainMenu;
                     break;
-                case FOOD_TYPE:
-                    foodType = new FoodType();
+
+                case INGREDIENTS:
+                    ingredient = new Ingredient();
                     break;
             }
         }
@@ -93,18 +96,23 @@ public class SAXMenuHandler extends DefaultHandler {
                 case NAME:
                     food.setName(text.toString());
                     break;
+
                 case IMAGE:
                     food.setImageURI(text.toString());
                     break;
+
                 case PRICE:
-                    foodType.setPrice(Double.parseDouble(text.toString()));
+                    ingredient.setPrice(Double.parseDouble(text.toString()));
                     break;
+
                 case DESCRIPTION:
-                    foodType.setDescription(text.toString());
+                    food.setDescription(text.toString());
                     break;
+
                 case WEIGHT:
-                    foodType.setWeight(text.toString());
+                    food.setWeight(text.toString());
                     break;
+
                 case FOOD:
                     currentMenu.addFood(food);
 
@@ -115,10 +123,14 @@ public class SAXMenuHandler extends DefaultHandler {
                     food = null;
                     break;
 
-                case FOOD_TYPE:
-                    food.addFoodType(foodType);
+                case INGREDIENT_NAME:
+                    ingredient.setName(text.toString());
+                    break;
 
-                    foodType = null;
+                case INGREDIENTS:
+                    food.addIngredients(ingredient);
+
+                    ingredient = null;
                     break;
             }
         }

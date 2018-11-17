@@ -1,7 +1,7 @@
 package edu.etc.karamach.xml.parser.dom;
 
 import edu.etc.karamach.xml.entity.Food;
-import edu.etc.karamach.xml.entity.FoodType;
+import edu.etc.karamach.xml.entity.Ingredient;
 import edu.etc.karamach.xml.entity.Menu.BreakfastMenu;
 import edu.etc.karamach.xml.entity.Menu.FoodMenu;
 import edu.etc.karamach.xml.entity.Menu.MainMenu;
@@ -35,7 +35,8 @@ public class DOMMenuParser implements XMLMenuParser {
     private static final String FOOD_TAG_NAME = "food";
 
     private static final int FIRST_ELEMENT_INDEX = 0;
-    private static final String FOOD_TYPE_TAG_NAME = "food-type";
+    private static final String INGREDIENTS_TAG_NAME = "ingredients";
+    private static final String INGREDIENT_NAME_TAG_NAME = "ingredient-name";
 
     private DOMParser domParser = new DOMParser();
 
@@ -110,39 +111,46 @@ public class DOMMenuParser implements XMLMenuParser {
         String idAttribute = foodElement.getAttribute(ID_TAG_NAME);
         food.setId(Integer.parseInt(idAttribute));
 
+
         Node nameNode = foodElement.getElementsByTagName(NAME_TAG_NAME).item(FIRST_ELEMENT_INDEX);
         food.setName(nameNode.getTextContent());
+
 
         Node imageNode = foodElement.getElementsByTagName(IMAGE_TAG_NAME).item(FIRST_ELEMENT_INDEX);
         food.setImageURI(imageNode.getTextContent());
 
 
-        NodeList foodTypeNodes = foodElement.getElementsByTagName(FOOD_TYPE_TAG_NAME);
+        Node weightNode =
+                foodElement.getElementsByTagName(WEIGHT_TAG_NAME).item(FIRST_ELEMENT_INDEX);
 
+        food.setWeight(weightNode.getTextContent());
+
+        Node descriptionNode =
+                foodElement.getElementsByTagName(DESCRIPTION_TAG_NAME).item(FIRST_ELEMENT_INDEX);
+
+        food.setDescription(descriptionNode.getTextContent());
+
+
+        NodeList foodTypeNodes = foodElement.getElementsByTagName(INGREDIENTS_TAG_NAME);
         for (int j = 0; j < foodTypeNodes.getLength(); j++) {
 
-            FoodType currentFoodType = new FoodType();
+            Ingredient currentIngredient = new Ingredient();
             Element currentFoodTypeElement = (Element) foodTypeNodes.item(j);
-
-
-            Node weightNode =
-                    currentFoodTypeElement.getElementsByTagName(WEIGHT_TAG_NAME).item(FIRST_ELEMENT_INDEX);
-
-            currentFoodType.setWeight(weightNode.getTextContent());
 
 
             Node priceNode =
                     currentFoodTypeElement.getElementsByTagName(PRICE_TAG_NAME).item(FIRST_ELEMENT_INDEX);
 
-            currentFoodType.setPrice(Double.valueOf(priceNode.getTextContent()));
+            currentIngredient.setPrice(Double.valueOf(priceNode.getTextContent()));
 
 
-            Node descriptionNode =
-                    currentFoodTypeElement.getElementsByTagName(DESCRIPTION_TAG_NAME).item(FIRST_ELEMENT_INDEX);
+            Node nameIngredientsNode =
+                    currentFoodTypeElement.getElementsByTagName(INGREDIENT_NAME_TAG_NAME).item(FIRST_ELEMENT_INDEX);
 
-            currentFoodType.setDescription(descriptionNode.getTextContent());
+            currentIngredient.setName(nameIngredientsNode.getTextContent());
 
-            food.addFoodType(currentFoodType);
+
+            food.addIngredients(currentIngredient);
         }
 
     }

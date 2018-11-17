@@ -8,15 +8,16 @@
         <sequence>
             <element type="string" name="image"/>
             <element type="string" name="name"/>
-            <element type="tns:Food-type" name="food-type" maxOccurs="unbounded"/>
+            <element type="string" name="description"/>
+            <element type="tns:Ingredients" name="ingredients" maxOccurs="unbounded"/>
+            <element type="string" name="weight"/>
         </sequence>
         <attribute type="int" name="id" use="required"/>
     </complexType>
 
-    <complexType name="Food-type">
+    <complexType name="Ingredients">
         <sequence>
-            <element type="string" name="description"/>
-            <element type="string" name="weight"/>
+            <element type="string" name="ingredient-name"/>
             <element type="double" name="price"/>
         </sequence>
     </complexType>
